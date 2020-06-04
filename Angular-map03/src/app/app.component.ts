@@ -32,11 +32,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // Crea un Observable ed Effettua la Subscribe
-    this.obsGeoData = this.http.get<GeoFeatureCollection>("https://3000-f931800b-d7d5-49ea-9778-a00d84a166ce.ws-eu01.gitpod.io/"); //tuourl
+    this.obsGeoData = this.http.get<GeoFeatureCollection>("https://3000-d8972400-005a-4bf6-8858-170d2411810f.ws-eu01.gitpod.io:3000/"); //tuourl
     this.obsGeoData.subscribe(this.prepareData);
 
     //Effettua la chiamatata al server per ottenere l’elenco dei vettori energetici
-    this.obsCiVett = this.http.get<Ci_vettore[]>("https://3000-f931800b-d7d5-49ea-9778-a00d84a166ce.ws-eu01.gitpod.io/ci_vettore/90");
+    this.obsCiVett = this.http.get<Ci_vettore[]>("https://3000-d8972400-005a-4bf6-8858-170d2411810f.ws-eu01.gitpod.io/ci_vettore/90");
+    //this.obsCiVett = this.http.get<Ci_vettore[]>("http://127.0.0.1:3000/ci_vettore/90");
     this.obsCiVett.subscribe(this.prepareCiVettData);
   }
   styleFunc = (feature) => {
